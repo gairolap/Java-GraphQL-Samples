@@ -1,0 +1,4 @@
+graphql:
+  playground:
+    mapping: /book-store
+    enabled: true

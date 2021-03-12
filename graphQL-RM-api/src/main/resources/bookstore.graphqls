@@ -1,0 +1,43 @@
+scalar Object
+
+# Schema Definition for Book-Store.
+schema {
+ query: Query
+}
+
+# Supports below READ operations.
+type Query {
+ allBooks: BookResponse
+ book(id: String): BookResponse
+}
+
+# Supports below WRITE, UPDATE and DELETE operations.
+type Mutation {
+updateBook(bookDTO: BookDTO): BookResponse
+createBook(bookDTO: BookDTO): BookResponse
+deleteBook(id: String): BookResponse
+}
+
+# Response object for book-store.
+type BookResponse {
+  responseObj: Object
+  responseStatus: String
+  responseCode: String
+}
+
+type Book {
+  isin: String
+  title: String
+  publisher: String
+  author: String
+  publishedDate: String
+}
+
+# DTO for book-store.
+input BookDTO {
+  isin: String
+  title: String
+  publisher: String
+  author: String
+  publishedDate: String
+}
